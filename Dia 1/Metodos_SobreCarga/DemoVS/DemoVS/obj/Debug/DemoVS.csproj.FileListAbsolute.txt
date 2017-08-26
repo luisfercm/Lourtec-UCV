@@ -1,0 +1,7 @@
+c:\users\computo\source\repos\DemoVS\DemoVS\bin\Debug\DemoVS.exe.config
+c:\users\computo\source\repos\DemoVS\DemoVS\bin\Debug\DemoVS.exe
+c:\users\computo\source\repos\DemoVS\DemoVS\bin\Debug\DemoVS.pdb
+c:\users\computo\source\repos\DemoVS\DemoVS\obj\Debug\DemoVS.csprojResolveAssemblyReference.cache
+c:\users\computo\source\repos\DemoVS\DemoVS\obj\Debug\DemoVS.csproj.CoreCompileInputs.cache
+c:\users\computo\source\repos\DemoVS\DemoVS\obj\Debug\DemoVS.exe
+c:\users\computo\source\repos\DemoVS\DemoVS\obj\Debug\DemoVS.pdb
