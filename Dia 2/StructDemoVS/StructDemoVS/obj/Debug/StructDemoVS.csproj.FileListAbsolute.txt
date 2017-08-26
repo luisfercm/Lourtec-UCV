@@ -1,0 +1,7 @@
+C:\Users\COMPUTO\source\repos\StructDemoVS\StructDemoVS\obj\Debug\StructDemoVS.csprojResolveAssemblyReference.cache
+C:\Users\COMPUTO\source\repos\StructDemoVS\StructDemoVS\obj\Debug\StructDemoVS.csproj.CoreCompileInputs.cache
+C:\Users\COMPUTO\source\repos\StructDemoVS\StructDemoVS\bin\Debug\StructDemoVS.exe.config
+C:\Users\COMPUTO\source\repos\StructDemoVS\StructDemoVS\bin\Debug\StructDemoVS.exe
+C:\Users\COMPUTO\source\repos\StructDemoVS\StructDemoVS\bin\Debug\StructDemoVS.pdb
+C:\Users\COMPUTO\source\repos\StructDemoVS\StructDemoVS\obj\Debug\StructDemoVS.exe
+C:\Users\COMPUTO\source\repos\StructDemoVS\StructDemoVS\obj\Debug\StructDemoVS.pdb
