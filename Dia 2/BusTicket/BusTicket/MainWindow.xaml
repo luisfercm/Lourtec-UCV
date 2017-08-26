@@ -13,9 +13,18 @@
             <RowDefinition Height="278*"/>
         </Grid.RowDefinitions>
         <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="TICKET PARA VIAJES" Width="507" FontSize="18" FontWeight="Bold" Height="63" VerticalAlignment="Top" Grid.RowSpan="3"/>
-        <TabControl HorizontalAlignment="Left" Margin="10,19,0,135" Width="507" Grid.Row="2">
+        <TabControl HorizontalAlignment="Left" Margin="10,19,0,10" Width="507" Grid.Row="2">
             <TabItem Header="TabItem">
-                <Grid Background="#FFE5E5E5" Margin="0,0,0,-128"/>
+                <StackPanel>
+                    <Label Content="Origen"></Label>
+                    <ComboBox x:Name="Origen"></ComboBox>
+                    <Label Content="Destino"></Label>
+                    <ComboBox x:Name="Destino"></ComboBox>
+                    <Label Content="Fecha"></Label>
+                    <DatePicker x:Name="DiaViaje"></DatePicker>
+                    <Button>Buscar</Button>
+                    <ListView></ListView>
+                </StackPanel>
             </TabItem>
             <TabItem Header="TabItem">
                 <StackPanel Orientation="Horizontal" Background="#FFE5E5E5" >

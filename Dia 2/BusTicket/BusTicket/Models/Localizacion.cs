@@ -12,5 +12,11 @@ namespace BusTicket.Models
         public string Ciudad { get; set; }
         public string Pais { get; set; }
         public string Estacion { get; set; }
+
+        //Sobrecargamos el metodo
+        public override string ToString()
+        {
+            return $"{Estacion}-{Ciudad},{Estado},{Pais}";
+        }
     }
 }
