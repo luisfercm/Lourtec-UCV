@@ -82,6 +82,26 @@ namespace BusTicket
             //this.Destino.Items.Add(Estaciones);
             this.Destino.SelectedItem = Reserva.Destino;
             this.DiaViaje.SelectedDate = Reserva.Fecha;
-        }   
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            BuscarViaje(Reserva);
+        }
+
+        public void BuscarViaje(Reserva reserva)
+        {
+            var query = from q in Rutas
+                        where q.Estaciones.Contains(reserva.Destino) && 
+                        q.Estaciones.Contains(reserva.Salida) &&
+                        q.FechaInicio >= reserva.Fecha
+                        select q;
+
+            //query = Rutas.Where(g => true).Select(g => g);
+            //query = Rutas.Find()
+
+            Resultados = query.ToList();
+            LVResultados.ItemsSource = Resultados;
+        }
     }
 }
