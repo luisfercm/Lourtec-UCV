@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,20 +9,33 @@ namespace DemoInterfaces
     class Program
     {
         static IAnimal Animal { get; set; }
+        public Program()
+        {
+
+        }
         public Program(IAnimal animal)
         {
             Animal = animal;
         }
-        static void Main(string[] args)
+
+        static void Main(string[] arg)
         {
-            GenericDemo gatos= new GenericDemo();
-
-            foreach (var g in gatos)
+            List<Gato> lg = new List<Gato>()
             {
-                g.Patas = 1;
+                new Gato(){ Patas = 4 },
+                new Gato{ Patas = 3 },
+                new Gato{ Patas = 5 },
+            };
+            GenericGatoCol gatos = new GenericGatoCol(lg.ToArray());
+            foreach (Gato g in gatos)
+            {
+                Console.WriteLine(g.Patas);
             }
+            Console.ReadKey();
+        }
 
-
+        static void Main2(string[] args)
+        {
             Perro perro = new Perro();
             Gato gato = new Gato();
             Paloma rataAlada = new Paloma();

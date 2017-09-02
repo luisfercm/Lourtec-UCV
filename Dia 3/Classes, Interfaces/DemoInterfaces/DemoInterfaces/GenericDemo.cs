@@ -7,23 +7,75 @@ using System.Threading.Tasks;
 
 namespace DemoInterfaces
 {
-    class GenericDemo:IEnumerable<Gato>
+    class GenericGatoCol : IEnumerable
     {
-
-        List<int> listEnteros;
-        List<string> listString;
-        List<Perro> listPerro;
-        Queue<Lobo> listLobo;
-        Dictionary<Guid, Paloma> diccionarioRatas;
-
-        public IEnumerator<Gato> GetEnumerator()
+        public GenericGatoCol(Gato[] gatos)
         {
-            throw new NotImplementedException();
+            this.gatos = new Gato[gatos.Length];
+            for (int i = 0; i < gatos.Length; i++)
+            {
+                this.gatos[i] = gatos[i];
+            }
+        }
+        Gato[] gatos;
+
+        public IEnumerator GetEnumerator()
+        {
+            for (int i = 0; i < gatos.Length; i++)
+            {
+                yield return gatos[i];
+            }
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            throw new NotImplementedException();
+            return new GenericGato(gatos);
         }
     }
+
+    public class GenericGato : IEnumerator
+    {
+        public Gato[] gatos;
+        int position = -1;
+
+        public GenericGato(Gato[] gatos)
+        {
+            this.gatos = gatos;
+        }
+
+        public bool MoveNext()
+        {
+            position++;
+            return (position < gatos.Count());
+        }
+
+        public void Reset()
+        {
+            position = -1;
+        }
+
+        object IEnumerator.Current
+        {
+            get
+            {
+                return Current;
+            }
+        }
+        public Gato Current
+        {
+            get
+            {
+                try
+                {
+                    return gatos[position];
+                }
+                catch (IndexOutOfRangeException)
+                {
+                    throw new InvalidOperationException();
+                }
+            }
+        }
+    }
+
+
 }
