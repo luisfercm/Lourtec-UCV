@@ -33,6 +33,7 @@ namespace DemoFileDP
                 if(stream == null) stream = File.Open(filePath, FileMode.OpenOrCreate);
                 using (StreamWriter sw = new StreamWriter(stream)) {
 
+
                     Console.WriteLine($"-----Stream Write---------");
                     sw.WriteLine("Hola Mundo!");
                     sw.WriteLine("Hola Clase!");
@@ -57,6 +58,7 @@ namespace DemoFileDP
 
             using (FileStream fs = new FileStream(filePath, FileMode.Open,FileAccess.ReadWrite))
             {
+                // throw new OutOfMemoryException();
 
                 using (StreamReader r = new StreamReader(fs))
                 {
