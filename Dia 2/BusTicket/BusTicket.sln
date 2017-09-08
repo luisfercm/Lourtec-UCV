@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26730.8
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusTicket", "BusTicket\BusTicket.csproj", "{8C26AEC7-37FB-490E-9372-BAF7DA810F9A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCV.Comun", "UCV.Comun\UCV.Comun.csproj", "{2DCC18A6-DB65-4575-88C2-91F326C0FCAC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{8C26AEC7-37FB-490E-9372-BAF7DA810F9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C26AEC7-37FB-490E-9372-BAF7DA810F9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C26AEC7-37FB-490E-9372-BAF7DA810F9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DCC18A6-DB65-4575-88C2-91F326C0FCAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DCC18A6-DB65-4575-88C2-91F326C0FCAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DCC18A6-DB65-4575-88C2-91F326C0FCAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DCC18A6-DB65-4575-88C2-91F326C0FCAC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
