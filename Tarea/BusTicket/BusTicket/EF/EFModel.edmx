@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="EFModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="EFModelStoreContainer">
+    <EntitySet Name="Rutas" EntityType="EFModel.Store.Rutas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Localizacion" EntityType="EFModel.Store.Localizacion" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Reserva" EntityType="EFModel.Store.Reserva" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="ReservaLocalizacion" Association="EFModel.Store.ReservaLocalizacion">
+      <End Role="Reserva" EntitySet="Reserva" />
+      <End Role="Localizacion" EntitySet="Localizacion" />
+    </AssociationSet>
+    <AssociationSet Name="ReservaLocalizacion1" Association="EFModel.Store.ReservaLocalizacion1">
+      <End Role="Reserva" EntitySet="Reserva" />
+      <End Role="Localizacion" EntitySet="Localizacion" />
+    </AssociationSet>
+    <AssociationSet Name="LocalizacionRutas" Association="EFModel.Store.LocalizacionRutas">
+      <End Role="Localizacion" EntitySet="Localizacion" />
+      <End Role="Rutas" EntitySet="Rutas" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Rutas">
+    <Key>
+      <PropertyRef Name="IdRuta" />
+    </Key>
+    <Property Name="IdRuta" Type="uniqueidentifier" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Chofer" Type="nvarchar" Nullable="false" MaxLength="60" />
+    <Property Name="Compania" Type="nvarchar" Nullable="false" MaxLength="60" />
+    <Property Name="FechaInicio" Type="datetime" Nullable="false" />
+    <Property Name="FechaFin" Type="datetime" Nullable="false" />
+    <Property Name="Estaciones_IdLocalizacion" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Localizacion">
+    <Key>
+      <PropertyRef Name="IdLocalizacion" />
+    </Key>
+    <Property Name="IdLocalizacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Estado" Type="nvarchar" Nullable="false" MaxLength="60" />
+    <Property Name="Ciudad" Type="nvarchar" Nullable="false" MaxLength="60" />
+    <Property Name="Pais" Type="nvarchar" Nullable="false" MaxLength="60" />
+    <Property Name="Estacion" Type="nvarchar" Nullable="false" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="Reserva">
+    <Key>
+      <PropertyRef Name="IdReserva" />
+    </Key>
+    <Property Name="IdReserva" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="Destino_IdLocalizacion" Type="int" Nullable="false" />
+    <Property Name="Salida_IdLocalizacion" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="ReservaLocalizacion">
+    <End Role="Reserva" Type="EFModel.Store.Reserva" Multiplicity="*" />
+    <End Role="Localizacion" Type="EFModel.Store.Localizacion" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Localizacion">
+        <PropertyRef Name="IdLocalizacion" />
+      </Principal>
+      <Dependent Role="Reserva">
+        <PropertyRef Name="Destino_IdLocalizacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ReservaLocalizacion1">
+    <End Role="Reserva" Type="EFModel.Store.Reserva" Multiplicity="*" />
+    <End Role="Localizacion" Type="EFModel.Store.Localizacion" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Localizacion">
+        <PropertyRef Name="IdLocalizacion" />
+      </Principal>
+      <Dependent Role="Reserva">
+        <PropertyRef Name="Salida_IdLocalizacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LocalizacionRutas">
+    <End Role="Localizacion" Type="EFModel.Store.Localizacion" Multiplicity="1" />
+    <End Role="Rutas" Type="EFModel.Store.Rutas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Localizacion">
+        <PropertyRef Name="IdLocalizacion" />
+      </Principal>
+      <Dependent Role="Rutas">
+        <PropertyRef Name="Estaciones_IdLocalizacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="EFModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="EFModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Rutas" EntityType="EFModel.Rutas" />
+          <EntitySet Name="Localizacion" EntityType="EFModel.Localizacion" />
+          <EntitySet Name="Reserva" EntityType="EFModel.Reserva" />
+             <AssociationSet Name="ReservaLocalizacion" Association="EFModel.ReservaLocalizacion">
+            <End Role="Reserva" EntitySet="Reserva" />
+            <End Role="Localizacion" EntitySet="Localizacion" />
+          </AssociationSet>
+          <AssociationSet Name="ReservaLocalizacion1" Association="EFModel.ReservaLocalizacion1">
+            <End Role="Reserva" EntitySet="Reserva" />
+            <End Role="Localizacion" EntitySet="Localizacion" />
+          </AssociationSet>
+          <AssociationSet Name="LocalizacionRutas" Association="EFModel.LocalizacionRutas">
+            <End Role="Localizacion" EntitySet="Localizacion" />
+            <End Role="Rutas" EntitySet="Rutas" />
+          </AssociationSet> 
+          </EntityContainer>
+        <EntityType Name="Rutas">
+          <Key>
+            <PropertyRef Name="IdRuta" />
+          </Key>
+          <Property Name="IdRuta" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Chofer" Type="String" Nullable="false" MaxLength="60" />
+          <Property Name="Compania" Type="String" Nullable="false" MaxLength="60" />
+          <Property Name="FechaInicio" Type="DateTime" Nullable="false" />
+          <Property Name="FechaFin" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Estaciones" Relationship="EFModel.LocalizacionRutas" FromRole="Rutas" ToRole="Localizacion" />
+        </EntityType>
+        <EntityType Name="Localizacion">
+          <Key>
+            <PropertyRef Name="IdLocalizacion" />
+          </Key>
+          <Property Name="IdLocalizacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Estado" Type="String" Nullable="false" MaxLength="60" />
+          <Property Name="Ciudad" Type="String" Nullable="false" MaxLength="60" />
+          <Property Name="Pais" Type="String" Nullable="false" MaxLength="60" />
+          <Property Name="Estacion" Type="String" Nullable="false" MaxLength="60" />
+          <NavigationProperty Name="Destino" Relationship="EFModel.ReservaLocalizacion" FromRole="Localizacion" ToRole="Reserva" />
+          <NavigationProperty Name="Salida" Relationship="EFModel.ReservaLocalizacion1" FromRole="Localizacion" ToRole="Reserva" />
+          <NavigationProperty Name="Estaciones" Relationship="EFModel.LocalizacionRutas" FromRole="Localizacion" ToRole="Rutas" />
+          </EntityType>
+        <EntityType Name="Reserva">
+          <Key>
+            <PropertyRef Name="IdReserva" />
+          </Key>
+          <Property Name="IdReserva" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Destino" Relationship="EFModel.ReservaLocalizacion" FromRole="Reserva" ToRole="Localizacion" />
+          <NavigationProperty Name="Salida" Relationship="EFModel.ReservaLocalizacion1" FromRole="Reserva" ToRole="Localizacion" />
+        </EntityType>
+        <Association Name="ReservaLocalizacion">
+          <End Type="EFModel.Reserva" Role="Reserva" Multiplicity="0..1" />
+          <End Type="EFModel.Localizacion" Role="Localizacion" Multiplicity="1" />
+        </Association>
+        <Association Name="ReservaLocalizacion1">
+          <End Type="EFModel.Reserva" Role="Reserva" Multiplicity="0..1" />
+          <End Type="EFModel.Localizacion" Role="Localizacion" Multiplicity="1" />
+        </Association>
+        <Association Name="LocalizacionRutas">
+          <End Type="EFModel.Localizacion" Role="Localizacion" Multiplicity="1" />
+          <End Type="EFModel.Rutas" Role="Rutas" Multiplicity="*" />
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EFModelStoreContainer" CdmEntityContainer="EFModelContainer">
+    <EntitySetMapping Name="Rutas">
+      <EntityTypeMapping TypeName="IsTypeOf(EFModel.Rutas)">
+        <MappingFragment StoreEntitySet="Rutas">
+          <ScalarProperty Name="IdRuta" ColumnName="IdRuta" />
+          <ScalarProperty Name="Chofer" ColumnName="Chofer" />
+          <ScalarProperty Name="Compania" ColumnName="Compania" />
+          <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+          <ScalarProperty Name="FechaFin" ColumnName="FechaFin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Localizacion">
+      <EntityTypeMapping TypeName="IsTypeOf(EFModel.Localizacion)">
+        <MappingFragment StoreEntitySet="Localizacion">
+          <ScalarProperty Name="IdLocalizacion" ColumnName="IdLocalizacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+          <ScalarProperty Name="Pais" ColumnName="Pais" />
+          <ScalarProperty Name="Estacion" ColumnName="Estacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reserva">
+      <EntityTypeMapping TypeName="IsTypeOf(EFModel.Reserva)">
+        <MappingFragment StoreEntitySet="Reserva">
+          <ScalarProperty Name="IdReserva" ColumnName="IdReserva" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="ReservaLocalizacion" TypeName="EFModel.ReservaLocalizacion" StoreEntitySet="Reserva">
+      <EndProperty Name="Localizacion">
+        <ScalarProperty Name="IdLocalizacion" ColumnName="Destino_IdLocalizacion" />
+      </EndProperty>
+      <EndProperty Name="Reserva">
+        <ScalarProperty Name="IdReserva" ColumnName="IdReserva" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ReservaLocalizacion1" TypeName="EFModel.ReservaLocalizacion1" StoreEntitySet="Reserva">
+      <EndProperty Name="Localizacion">
+        <ScalarProperty Name="IdLocalizacion" ColumnName="Salida_IdLocalizacion" />
+      </EndProperty>
+      <EndProperty Name="Reserva">
+        <ScalarProperty Name="IdReserva" ColumnName="IdReserva" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="LocalizacionRutas" TypeName="EFModel.LocalizacionRutas" StoreEntitySet="Rutas">
+      <EndProperty Name="Localizacion">
+        <ScalarProperty Name="IdLocalizacion" ColumnName="Estaciones_IdLocalizacion" />
+      </EndProperty>
+      <EndProperty Name="Rutas">
+        <ScalarProperty Name="IdRuta" ColumnName="IdRuta" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
