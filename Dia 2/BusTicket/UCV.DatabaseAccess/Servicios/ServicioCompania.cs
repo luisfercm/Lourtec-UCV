@@ -47,24 +47,30 @@ namespace UCV.DatabaseAccess.Servicios
                 try
                 {
 
-               
-                var aq = testContext.Rutas.Add(new Ruta() { Id = Guid.NewGuid() });
-                testContext.SaveChanges();
 
                 var q = Db.Companias;
                 Db.SaveChanges();
+
 
                 var q1 = Db.Companias;
                 var c1 = q1.FirstOrDefault();
                 c1.Ruc = "Nuevo";
                 var c2 = new Compania() { Id = Guid.NewGuid() };
+                Db.Companias.Add(c2);
                 Db.SaveChanges();
+
 
                 var q2 = Db.Companias;
                 var c3 = q2.FirstOrDefault();
                 Db.Companias.Remove(c3);
+                Db.SaveChanges();
 
-                scope.Complete();
+
+
+                 var aq = testContext.Rutas.Add(new Ruta() { Id = Guid.NewGuid() });
+                 testContext.SaveChanges();
+
+                    scope.Complete();
 
                 }
                 catch 
