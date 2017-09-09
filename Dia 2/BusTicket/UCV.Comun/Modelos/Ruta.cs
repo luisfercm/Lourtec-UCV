@@ -2,7 +2,7 @@
 
 namespace UCV.Comun.Modelos
 {
-    public class Ruta
+    public class Ruta : BaseClass
     {
         /// <summary>
         /// Informacion de la uniad/vehiculo

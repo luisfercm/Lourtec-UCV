@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,6 +46,7 @@
     <Compile Include="Interfaces\IServiciosRuta.cs" />
     <Compile Include="Interfaces\IServiciosUsuario.cs" />
     <Compile Include="Interfaces\IServiciosViaje.cs" />
+    <Compile Include="Modelos\BaseClass.cs" />
     <Compile Include="Modelos\Compania.cs" />
     <Compile Include="Modelos\Reserva.cs" />
     <Compile Include="Modelos\Ruta.cs" />

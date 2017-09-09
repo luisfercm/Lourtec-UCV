@@ -1,6 +1,6 @@
 ﻿namespace UCV.Comun.Modelos
 {
-    public class Compania
+    public class Compania: BaseClass
     {
 
         public string Ruc { get; set; }

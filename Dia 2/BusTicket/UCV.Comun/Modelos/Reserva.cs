@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UCV.Comun.Modelos
 {
-   public class Reserva
+   public class Reserva : BaseClass
     {
         public Usuario Usuario { get; set; }
         public DateTime FechaReserva { get; set; }

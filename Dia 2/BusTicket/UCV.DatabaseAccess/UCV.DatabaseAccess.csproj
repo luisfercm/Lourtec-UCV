@@ -52,12 +52,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contextos\SqlBusContexto.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Servicios\ServicioCompania.cs" />
+    <Compile Include="Servicios\ServicioReserva.cs" />
+    <Compile Include="Servicios\ServicioRuta.cs" />
+    <Compile Include="Servicios\ServicioUsuario.cs" />
+    <Compile Include="Servicios\ServicioViaje.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UCV.Comun\UCV.Comun.csproj">
+      <Project>{2dcc18a6-db65-4575-88c2-91f326c0fcac}</Project>
+      <Name>UCV.Comun</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

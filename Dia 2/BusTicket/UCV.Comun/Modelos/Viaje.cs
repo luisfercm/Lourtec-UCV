@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UCV.Comun.Modelos
 {
-   public class Viaje
+   public class Viaje : BaseClass
     {
         public Compania Compania { get; set; }
         public Ruta Ruta { get; set; }
