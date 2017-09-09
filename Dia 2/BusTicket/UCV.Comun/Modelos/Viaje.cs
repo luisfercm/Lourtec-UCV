@@ -10,6 +10,6 @@ namespace UCV.Comun.Modelos
     {
         public Compania Compania { get; set; }
         public Ruta Ruta { get; set; }
-
+        public decimal Costo { get; set; }
     }
 }
