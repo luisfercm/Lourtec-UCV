@@ -8,6 +8,14 @@ using UCV.Comun.Modelos;
 
 namespace UCV.DatabaseAccess.Contextos
 {
+
+    public class SqlAnalisisContexto : DbContext
+    {
+        public DbSet<Ruta> Rutas { get; set; }
+    }
+
+
+
     public class SqlBusContexto:DbContext
     {
         public DbSet<Compania> Companias { get; set; }
