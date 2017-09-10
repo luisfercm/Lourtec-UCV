@@ -15,5 +15,7 @@ namespace UCV.Comun.Interfaces
         void UpdateUsuario(Usuario usuario);
         void DeleteUsuario(Usuario usuario);
 
+        Usuario Login(Usuario usuario);
+
     }
 }

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCV.Comun", "UCV.Comun\UCV.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCV.DatabaseAccess", "UCV.DatabaseAccess\UCV.DatabaseAccess.csproj", "{A4F9D549-7E95-4757-B775-F70F561BAF56}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UCV.UIClient", "UCV.UIClient\UCV.UIClient.csproj", "{5499D58A-6C32-41C2-A5FA-7563B0E8768C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{A4F9D549-7E95-4757-B775-F70F561BAF56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4F9D549-7E95-4757-B775-F70F561BAF56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4F9D549-7E95-4757-B775-F70F561BAF56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5499D58A-6C32-41C2-A5FA-7563B0E8768C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5499D58A-6C32-41C2-A5FA-7563B0E8768C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5499D58A-6C32-41C2-A5FA-7563B0E8768C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5499D58A-6C32-41C2-A5FA-7563B0E8768C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
